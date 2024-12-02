@@ -137,6 +137,10 @@ ALTER TABLE partie
 ADD CONSTRAINT ck_score_2
 CHECK(score_equipe_2 >= 0);
 
+ALTER TABLE partie
+ADD CONSTRAINT chk_fk_id_equipe_different
+CHECK (id_equipe_2 != id_equipe_1);
+
 ALTER TABLE equipe
 ADD CONSTRAINT ck_nom_equipe
 CHECK (nom_equipe REGEXP '^[A-Za-z]{4,}$');
